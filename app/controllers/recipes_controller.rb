@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    if params[:query]
+    if params[:query].present?
       @recipes = Recipe.search_recipe(params[:query])
     else
       @recipes = Recipe.all
