@@ -10,6 +10,14 @@ class UserIngredientsController < ApplicationController
     ingredients_id = UserIngredient.where(user: current_user).pluck(:ingredient_id)
     # Without the pluck, I would only get an array of user_ingredients instances
     @ingredients_name = Ingredient.find(ingredients_id).pluck(:name).join(' ')
+    # raise
+    # @vegetables = UserIngredient.where(category: "vegetables")
+    # @fruits = UserIngredient.where(category: "fruits")
+    # @starch = UserIngredient.where(category: "starch")
+    # @legumes = UserIngredient.where(category: "legumes")
+    # @flour = UserIngredient.where(category: "flour")
+    # @mushrooms = UserIngredient.where(category: "mushrooms")
+    # @spices = UserIngredient.where(category: "spices")
   end
 
   def create
