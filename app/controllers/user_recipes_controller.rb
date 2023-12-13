@@ -23,17 +23,19 @@ class UserRecipesController < ApplicationController
       # if params[:user_recipe][:collection_ids].present?
       # end
       params[:user_recipe][:collection_ids].each do |id|
-        UserRecipeCollection.create!(user_recipe: @user_recipe, collection: Collection.find(id))
+      @user_recipe_collection = UserRecipeCollection.new(user_recipe_collection_params)
+      @user_recipe_collection.user_recipe = @user_recipe
+      @user_recipe_collection.collection = Collection.find(id)
+        # UserRecipeCollection.create!(user_recipe: @user_recipe, collection: Collection.find(id))
       end
       all_default_collection = Collection.where(user: current_user, name: "All")[0]
-      UserRecipeCollection.create!(user_recipe: @user_recipe, collection: all_default_collection)
-    # user_recipe_collection = UserRecipeCollection.new(
-    #   collection_id: params[:user_recipe][:collection_ids],
-    #   user_recipe_id: @user_recipe.id)
-    # user_recipe_collection.save
+      @user_recipe_collection = UserRecipeCollection.new(user_recipe_collection_params)
+      @user_recipe_collection.user_recipe = @user_recipe
+      @user_recipe_collection.collection = all_default_collection
+      # UserRecipeCollection.create!(user_recipe: @user_recipe, collection: all_default_collection)
+
       redirect_to recipe_path(params[:recipe_id]), notice: 'Recipe was added to your cookbook.'
 
-        # default_collection_id = Collection.where(name: 'All', user: current_user)[0].id
     else
       redirect_to recipe_path(params[:recipe_id]), notice: 'This recipe is already in your cookbook.'
     end
@@ -60,5 +62,11 @@ class UserRecipesController < ApplicationController
   def user_recipe_params
     params.require(:user_recipe).permit(:user_id, :recipe_id)
   end
+
+  def user_recipe_collection_params
+    params.require(:user_recipe_collection).permit(:user_recipe_id, :collection_id)
+
+  end
+
 
 end
