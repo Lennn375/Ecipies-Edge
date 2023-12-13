@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
     # Put a button where you can 'Find recipe with what's left in the fridge'
     # This button should launch the search with the pluck array of ingredient's names, if this params exists
     # So Recipe.search_recipe(pluck_result)
-    @recipes = Recipe.search_recipes(params[:query]) if params[:query].present?
+    @recipes = Recipe.search_recipes(params[:query]) if params[:query].blank?
     @recipes = Recipe.search_recipes(params[:fridge]) if params[:fridge].present?
 
     respond_to do |format|

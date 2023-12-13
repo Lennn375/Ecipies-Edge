@@ -176,6 +176,7 @@ ingretient_107 = Ingredient.create(name: "salt", category: category_9)
 ingretient_108 = Ingredient.create(name: "pepper", category: category_9)
 ingretient_109 = Ingredient.create(name: "cumin", category: category_9)
 ingretient_110 = Ingredient.create(name: "chilli flakes", category: category_9)
+ingretient_110 = Ingredient.create(name: "olive oil", category: category_9)
 
 
 
@@ -224,7 +225,7 @@ file = URI.open("https://s3.amazonaws.com/static.realcaliforniamilk.com/media/re
 recipe7.image.attach(io: file, filename: "nes.png", content_type: "image/png")
 recipe8 = Recipe.create!(name: "Mediterranean Pesto Pizza", instructions: "Preheat oven to 350 degrees F (175 degrees C).
 Spread pesto onto each pita; top with feta cheese, tomatoes, and Kalamata olives. Place each pita onto a baking sheet.
-Bake in the preheated oven until cheese is melted, 6 to 8 minutes. ", servings: 6, cooking_time: 25, ingredients: ["carrot chopped", "vegetable broth", "onions chopped", "curry powder", "olve oil"])
+Bake in the preheated oven until cheese is melted, 6 to 8 minutes. ", servings: 6, cooking_time: 25, ingredients: "carrot chopped", "vegetable broth", "onions chopped", "curry powder", "olve oil" )
 file = URI.open("https://www.thissavoryvegan.com/wp-content/uploads/2017/03/Vegan-pesto-pizza-2.jpeg")
 recipe8.image.attach(io: file, filename: "nes.png", content_type: "image/png")
 recipe9 = Recipe.create!(name: "Guacamole", instructions: "Mash avocados, lime juice, and salt together in a medium bowl; mix in tomatoes, onion, cilantro, and garlic. Stir in cayenne pepper.Serve immediately, or cover and refrigerate for 1 hour for improved flavor.", servings: 4, cooking_time: 15, ingredients: ["avocados", "lime", "onion ", "tomatoes", "garlic", "cilantro"])

@@ -2,10 +2,11 @@
   <div class="wrapper">
     <h3 class="mb-2">Your ingredient list</h3>
     <div class= "d-flex justify-content-center" >
-    <%= link_to 'find recipes?', recipes_path(:fridge => @ingredients_name), class:"btn-fridge"%>
+
+    <%= link_to 'find recipes?', recipes_path(:fridge => @ingredients_name), class:"btn-fridge text-dark"%>
     </div>
     <br>
-    <%= link_to 'add new ingredient(s)', ingredients_path, class: "d-flex justify-content-center" %>
+    <%= link_to 'add new ingredient(s)', ingredients_path, class: "d-flex justify-content-center btn-fridge mb-2 text-dark" %>
     <% @categories.each do |category|%>
       <div class="card border-light mb-3" style="max-width: 18rem;">
         <div class="card-header"><i class="fa-solid fa-utensils"></i> <%= category.name.capitalize %></div>
