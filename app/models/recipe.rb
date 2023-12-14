@@ -12,6 +12,6 @@ class Recipe < ApplicationRecord
   pg_search_scope :search_recipes,
                   against: %i[name ingredients],
                   using: {
-                    tsearch: {any_word: "," }
+                    tsearch: {any_word: true }
                   }
 end

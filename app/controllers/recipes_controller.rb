@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
     @recipes = @recipes.search_recipes(params[:query]) if params[:query].present?
-    @recipes = @recipes.search_recipes(params[:fridge]) if params[:fridge].present?
+    @recipes = @recipes.search_recipes(params[:fridge]) if params[:fridge]
     # WE HAVE TO USE A BASIC QUERY to find ingredients because other wise it search each words
     # SO, "red pepper" gives every results with "pepper"! wich is basically everything!
     # ILok at the Rails "search" lecture: it says how to query form 2 columns (name and ingredients)...
