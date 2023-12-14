@@ -81,7 +81,7 @@ ingretient_12 = Ingredient.create(name: "corn", category: category_5)
 ingretient_13 = Ingredient.create(name: "oats", category: category_5)
 ingretient_14 = Ingredient.create(name: "rice", category: category_3)
 ingretient_15 = Ingredient.create(name: "whole wheat flour", category: category_7)
-ingretient_16 = Ingredient.create(name: "potatos", category: category_1)
+ingretient_16 = Ingredient.create(name: "potato", category: category_1)
 ingretient_17 = Ingredient.create(name: "raspberry", category: category_2)
 ingretient_18 = Ingredient.create(name: "strawberry", category: category_2)
 ingretient_19 = Ingredient.create(name: "blueberry", category: category_2)
@@ -262,7 +262,11 @@ recipe14.image.attach(io: file, filename: "nes.png", content_type: "image/png")
 recipe15 = Recipe.create!(name: "Potato Soup", instructions: "Fill a large pot of water with just enough water to cover the potatoes and bring it to a boil.
   Reduce the heat to a simmer and continue to cook the potatoes for about 15-20 minutes until soft. When poked with a fork, the potato should mostly fall apart.
   Remove from heat and drain most of the water, from the pot, leaving just a half-inch of water at the bottom of the pot. (This doesn’t have to be exact so don’t stress!)
+<<<<<<< HEAD
   Add the milk garlic salt and pepper, then gently mash the potatoes with the back of a fork until the potatoes start to break down. I like my soup chunky, but if you like it smoother, you could use a potato masher or an immersion blender.Continue to cook on low heat for 5 minutes.Divide into bowls and top each bowl with a little cheese, green onions, and additional salt and pepper to taste", servings: 8, cooking_time: 30, ingredients: "potatoess, milk, cheddar cheese, garlic")
+=======
+  Add the milk garlic salt and pepper, then gently mash the potatoes with the back of a fork until the potatoes start to break down. I like my soup chunky, but if you like it smoother, you could use a potato masher or an immersion blender.Continue to cook on low heat for 5 minutes.Divide into bowls and top each bowl with a little cheese, green onions, and additional salt and pepper to taste", servings: 8, cooking_time: 30, ingredients: "potatoes, milk, cheddar cheese, garlic")
+>>>>>>> master
 file = URI.open("https://www.budgetbytes.com/wp-content/uploads/2023/11/Slow-Cooker-Potato-Soup-Close.jpg")
 recipe15.image.attach(io: file, filename: "nes.png", content_type: "image/png")
 recipe16 = Recipe.create!(name: "Black Bean Soup", instructions: "In a large pot, add in your black beans, including the liquid in the can.
