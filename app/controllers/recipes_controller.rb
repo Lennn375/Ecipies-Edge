@@ -1,11 +1,11 @@
 class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
-    # Put a button where you can 'Find recipe with what's left in the fridge'
-    # This button should launch the search with the pluck array of ingredient's names, if this params exists
-    # So Recipe.search_recipe(pluck_result)
-    @recipes = Recipe.search_recipes(params[:query]) if params[:query].present?
-    @recipes = Recipe.search_recipes(params[:fridge]) if params[:fridge].present?
+    @recipes = @recipes.search_recipes(params[:query]) if params[:query].present?
+    @recipes = @recipes.search_recipes(params[:fridge]) if params[:fridge].present?
+    # WE HAVE TO USE A BASIC QUERY to find ingredients because other wise it search each words
+    # SO, "red pepper" gives every results with "pepper"! wich is basically everything!
+    # ILok at the Rails "search" lecture: it says how to query form 2 columns (name and ingredients)...
 
     respond_to do |format|
       format.html

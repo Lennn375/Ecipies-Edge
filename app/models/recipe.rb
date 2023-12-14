@@ -10,8 +10,8 @@ class Recipe < ApplicationRecord
   belongs_to :user, optional: true
   include PgSearch::Model
   pg_search_scope :search_recipes,
-                  against: %i[name instructions],
+                  against: %i[name ingredients],
                   using: {
-                    tsearch: { prefix: true, any_word: true }
+                    tsearch: {any_word: "," }
                   }
 end

@@ -10,7 +10,7 @@ class UserIngredientsController < ApplicationController
     ingredients_id = @user_ingredients.pluck(:ingredient_id)
     # Without the pluck, I would only get an array of user_ingredients instances
     ingredients = Ingredient.find(ingredients_id)
-    @ingredients_name = ingredients.pluck(:name).join(' ')
+    @ingredients_name = ingredients.pluck(:name).join(',')
 
     category_ids = ingredients.pluck(:category_id)
     @categories = Category.find(category_ids)
